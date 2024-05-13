@@ -17,9 +17,9 @@ public class ICos extends InstanceFactory {
 		super("ICos");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-20,-20,20,40));
-        
+
         setPorts(new Port[] {
         		new Port(-20,0,Port.INPUT,32), //FPNum In
         		new Port(0,0,Port.OUTPUT,32), //BinNum Out
@@ -36,9 +36,9 @@ public class ICos extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float xICos = FloatHelper.floatValueToFloat(state.getPort(0));
+		float xICos = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		xICos = (float)Math.acos((double)xICos);
 		state.setPort(1, FloatHelper.floatToFloatValue(xICos), 1);
 	}
-	
+
 }

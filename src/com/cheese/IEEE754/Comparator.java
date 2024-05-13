@@ -16,11 +16,11 @@ import com.cburch.logisim.util.StringGetter;
 
 public class Comparator extends InstanceFactory{
 	private static class FloatGetter implements StringGetter {
-		@Override
+		/*@Override
 		public String get() {
 			// TODO Auto-generated method stub
 			return "Leeway";
-		}
+		}*/
 	}
 	private static class FloatAttribute extends Attribute<Float> {
 		private FloatAttribute(String name, StringGetter disp) {
@@ -56,8 +56,8 @@ public class Comparator extends InstanceFactory{
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float a = FloatHelper.floatValueToFloat(state.getPort(0));
-		float b = FloatHelper.floatValueToFloat(state.getPort(1));
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		float b = FloatHelper.floatValueToFloat(state.getPortValue(1));
 		float diff = Math.abs(b-a);
 		if (diff <= state.getAttributeValue(ATTR_LEEWAY)) {
 			state.setPort(2, Value.FALSE, 1);

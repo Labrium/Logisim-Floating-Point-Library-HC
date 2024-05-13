@@ -17,9 +17,9 @@ public class BinToFP extends InstanceFactory {
 		super("Int To FP");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-20,-20,20,40));
-        
+
         setPorts(new Port[] {
         		new Port(-20,0,Port.INPUT,32), //BinNum in
         		new Port(0,0,Port.OUTPUT,32), //FPNum out
@@ -36,7 +36,7 @@ public class BinToFP extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		state.setPort(1, FloatHelper.valueToFloatValue(state.getPort(0)), 1);
+		state.setPort(1, FloatHelper.valueToFloatValue(state.getPortValue(0)), 1);
 	}
-	
+
 }

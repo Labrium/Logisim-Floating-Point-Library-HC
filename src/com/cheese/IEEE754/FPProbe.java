@@ -18,9 +18,9 @@ public class FPProbe extends InstanceFactory {
 		super("FP Probe");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-80,-10,80,20));
-        
+
         setPorts(new Port[] {
         		new Port(-80,0,Port.INPUT,32), //FPNum In
             });
@@ -40,7 +40,7 @@ public class FPProbe extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		CounterData cur = CounterData.get(state);
-		cur.setValue(state.getPort(0));
+		cur.setValue(state.getPortValue(0));
 	}
-	
+
 }

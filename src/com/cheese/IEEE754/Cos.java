@@ -17,9 +17,9 @@ public class Cos extends InstanceFactory {
 		super("Cos");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-20,-20,20,40));
-        
+
         setPorts(new Port[] {
         		new Port(-20,0,Port.INPUT,32), //FPNum In
         		new Port(0,0,Port.OUTPUT,32), //BinNum Out
@@ -36,9 +36,9 @@ public class Cos extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float xCos = FloatHelper.floatValueToFloat(state.getPort(0));
+		float xCos = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		xCos = (float)Math.cos((double)xCos);
 		state.setPort(1, FloatHelper.floatToFloatValue(xCos), 1);
 	}
-	
+
 }

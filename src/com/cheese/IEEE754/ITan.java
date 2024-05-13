@@ -17,9 +17,9 @@ public class ITan extends InstanceFactory {
 		super("ITan");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-20,-20,20,40));
-        
+
         setPorts(new Port[] {
         		new Port(-20,0,Port.INPUT,32), //FPNum In
         		new Port(0,0,Port.OUTPUT,32), //BinNum Out
@@ -36,9 +36,9 @@ public class ITan extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float xITan = FloatHelper.floatValueToFloat(state.getPort(0));
+		float xITan = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		xITan = (float)Math.atan((double)xITan);
 		state.setPort(1, FloatHelper.floatToFloatValue(xITan), 1);
 	}
-	
+
 }

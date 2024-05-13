@@ -20,11 +20,11 @@ import com.cburch.logisim.util.StringGetter;
 
 public class FPConst extends InstanceFactory{
 	private static class FloatGetter implements StringGetter {
-		@Override
+		/*@Override
 		public String get() {
 			// TODO Auto-generated method stub
 			return "Value";
-		}
+		}*/
 	}
 	private static class FloatAttribute extends Attribute<Float> {
 		private FloatAttribute(String name, StringGetter disp) {

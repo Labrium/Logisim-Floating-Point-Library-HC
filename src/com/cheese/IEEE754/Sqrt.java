@@ -17,9 +17,9 @@ public class Sqrt extends InstanceFactory {
 		super("Sqrt");
         setAttributes(new Attribute[] {  },
                 new Object[] {  });
-        
+
         setOffsetBounds(Bounds.create(-20,-20,20,40));
-        
+
         setPorts(new Port[] {
         		new Port(-20,0,Port.INPUT,32), //FPNum In
         		new Port(0,0,Port.OUTPUT,32), //BinNum Out
@@ -36,9 +36,9 @@ public class Sqrt extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float xSqrt = FloatHelper.floatValueToFloat(state.getPort(0));
+		float xSqrt = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		xSqrt = (float)Math.sqrt((double)xSqrt);
 		state.setPort(1, FloatHelper.floatToFloatValue(xSqrt), 1);
 	}
-	
+
 }

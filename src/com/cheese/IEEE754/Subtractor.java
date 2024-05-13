@@ -18,9 +18,9 @@ public class Subtractor extends InstanceFactory {
 		super("Subtractor");
 		setAttributes(new Attribute[] {  },
 	                new Object[] {  });
-	        
+
 	    setOffsetBounds(Bounds.create(-20,-20,20,40));
-	        
+
 	    setPorts(new Port[] {
 	      		new Port(-20,-10,Port.INPUT,32), //A
 	      		new Port(-20,10,Port.INPUT,32), //B
@@ -38,8 +38,8 @@ public class Subtractor extends InstanceFactory {
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		float a = FloatHelper.floatValueToFloat(state.getPort(0));
-		float b = FloatHelper.floatValueToFloat(state.getPort(1));
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		float b = FloatHelper.floatValueToFloat(state.getPortValue(1));
 		state.setPort(2, FloatHelper.floatToFloatValue(a-b), 1);
 	}
 
