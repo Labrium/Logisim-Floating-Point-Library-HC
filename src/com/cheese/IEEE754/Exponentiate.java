@@ -34,9 +34,9 @@ public class Exponentiate extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xSqrt = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xSqrt = (float)Math.pow(Math.E, (double)xSqrt);
-		state.setPort(1, FloatHelper.floatToFloatValue(xSqrt), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.pow(Math.E, (double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

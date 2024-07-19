@@ -12,10 +12,10 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringGetter;
 
-public class ICos extends InstanceFactory {
+public class ASin extends InstanceFactory {
 
-	public ICos() {
-		super("ICos");
+	public ASin() {
+		super("ASin");
 		setAttributes(new Attribute[] { }, new Object[] { });
 
 		setOffsetBounds(Bounds.create(-20, -20, 20, 40));
@@ -34,9 +34,9 @@ public class ICos extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xICos = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xICos = (float)Math.acos((double)xICos);
-		state.setPort(1, FloatHelper.floatToFloatValue(xICos), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.asin((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

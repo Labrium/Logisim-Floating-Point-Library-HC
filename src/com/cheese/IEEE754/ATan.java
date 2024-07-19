@@ -12,10 +12,10 @@ import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringGetter;
 
-public class ITan extends InstanceFactory {
+public class ATan extends InstanceFactory {
 
-	public ITan() {
-		super("ITan");
+	public ATan() {
+		super("ATan");
 		setAttributes(new Attribute[] { }, new Object[] { });
 
 		setOffsetBounds(Bounds.create(-20, -20, 20, 40));
@@ -34,9 +34,9 @@ public class ITan extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xITan = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xITan = (float)Math.atan((double)xITan);
-		state.setPort(1, FloatHelper.floatToFloatValue(xITan), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.atan((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

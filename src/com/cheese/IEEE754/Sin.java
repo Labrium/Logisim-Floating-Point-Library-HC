@@ -34,9 +34,9 @@ public class Sin extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xSin = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xSin = (float)Math.sin((double)xSin);
-		state.setPort(1, FloatHelper.floatToFloatValue(xSin), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.sin((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

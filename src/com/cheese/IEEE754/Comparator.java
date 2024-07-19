@@ -35,7 +35,7 @@ public class Comparator extends InstanceFactory{
 	public static final Attribute<Float> ATTR_LEEWAY = new FloatAttribute("attrLeewayValue", new FloatGetter());
 	public Comparator() {
 		super("Comparator");
-		setAttributes(new Attribute[] {ATTR_LEEWAY}, new Object[] {0.0f});
+		setAttributes(new Attribute[] { ATTR_LEEWAY }, new Object[] { 0.0f });
 		setOffsetBounds(Bounds.create(-30, -20, 30, 40));
 		setPorts(new Port[] {
 			new Port(-30, -10, Port.INPUT, 32), //A

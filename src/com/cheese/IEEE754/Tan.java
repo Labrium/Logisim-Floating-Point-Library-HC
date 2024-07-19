@@ -34,9 +34,9 @@ public class Tan extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xTan = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xTan = (float)Math.tan((double)xTan);
-		state.setPort(1, FloatHelper.floatToFloatValue(xTan), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.tan((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

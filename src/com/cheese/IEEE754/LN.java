@@ -34,9 +34,9 @@ public class LN extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xSqrt = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xSqrt = (float)Math.log((double)xSqrt);
-		state.setPort(1, FloatHelper.floatToFloatValue(xSqrt), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.log((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }

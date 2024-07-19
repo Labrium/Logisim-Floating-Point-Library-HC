@@ -56,7 +56,6 @@ public class FPConst extends InstanceFactory{
 
 	@Override
 	public void propagate(InstanceState state) {
-		// TODO Auto-generated method stub
 		state.setPort(0, FloatHelper.floatToFloatValue(state.getAttributeValue(ATTR_FLOAT)), 0);
 	}
 }

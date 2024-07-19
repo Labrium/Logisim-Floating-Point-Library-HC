@@ -34,9 +34,9 @@ public class Cos extends InstanceFactory {
 
 	@Override
 	public void propagate(InstanceState state) {
-		float xCos = FloatHelper.floatValueToFloat(state.getPortValue(0));
-		xCos = (float)Math.cos((double)xCos);
-		state.setPort(1, FloatHelper.floatToFloatValue(xCos), 1);
+		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
+		a = (float)Math.cos((double)a);
+		state.setPort(1, FloatHelper.floatToFloatValue(a), 1);
 	}
 
 }
