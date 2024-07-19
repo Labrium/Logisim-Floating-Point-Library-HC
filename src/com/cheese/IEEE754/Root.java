@@ -37,7 +37,7 @@ public class Root extends InstanceFactory {
 	public void propagate(InstanceState state) {
 		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		float b = FloatHelper.floatValueToFloat(state.getPortValue(1));
-		state.setPort(2, FloatHelper.floatToFloatValue((float)Math.pow(a, 1/b)), 1);
+		state.setPort(2, FloatHelper.floatToFloatValue((float)Math.pow(a, 1 / b)), 1);
 	}
 
 }

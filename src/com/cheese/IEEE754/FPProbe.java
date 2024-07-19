@@ -14,23 +14,22 @@ import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
 
 public class FPProbe extends InstanceFactory {
-	FPProbe() {
+
+	public FPProbe() {
 		super("FP Probe");
-        setAttributes(new Attribute[] {  },
-                new Object[] {  });
+		setAttributes(new Attribute[] { }, new Object[] { });
 
-        setOffsetBounds(Bounds.create(-80,-10,80,20));
+		setOffsetBounds(Bounds.create(-80, -10, 80, 20));
 
-        setPorts(new Port[] {
-        		new Port(-80,0,Port.INPUT,32), //FPNum In
-            });
+		setPorts(new Port[] {
+			new Port(-80, 0, Port.INPUT, 32),
+		});
 	}
 
 	@Override
 	public void paintInstance(InstancePainter painter) {
 		CounterData s = CounterData.get(painter);
 		float v = FloatHelper.floatValueToFloat(s.getValue());
-		// TODO Auto-generated method stub
 		painter.drawBounds();
 		painter.drawPorts();
 		Bounds bds = painter.getBounds();

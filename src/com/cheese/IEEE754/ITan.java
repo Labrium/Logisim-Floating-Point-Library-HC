@@ -13,29 +13,27 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringGetter;
 
 public class ITan extends InstanceFactory {
-	ITan() {
+
+	public ITan() {
 		super("ITan");
-        setAttributes(new Attribute[] {  },
-                new Object[] {  });
+		setAttributes(new Attribute[] { }, new Object[] { });
 
-        setOffsetBounds(Bounds.create(-20,-20,20,40));
+		setOffsetBounds(Bounds.create(-20, -20, 20, 40));
 
-        setPorts(new Port[] {
-        		new Port(-20,0,Port.INPUT,32), //FPNum In
-        		new Port(0,0,Port.OUTPUT,32), //BinNum Out
-            });
+		setPorts(new Port[] {
+			new Port(-20, 0, Port.INPUT, 32),
+			new Port(0, 0, Port.OUTPUT, 32),
+		});
 	}
 
 	@Override
 	public void paintInstance(InstancePainter painter) {
-		// TODO Auto-generated method stub
 		painter.drawBounds();
 		painter.drawPorts();
 	}
 
 	@Override
 	public void propagate(InstanceState state) {
-		// TODO Auto-generated method stub
 		float xITan = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		xITan = (float)Math.atan((double)xITan);
 		state.setPort(1, FloatHelper.floatToFloatValue(xITan), 1);

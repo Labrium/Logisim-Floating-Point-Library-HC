@@ -13,29 +13,27 @@ import com.cburch.logisim.instance.StdAttr;
 import com.cburch.logisim.util.StringGetter;
 
 public class BinToFP extends InstanceFactory {
-	BinToFP() {
+
+	public BinToFP() {
 		super("Int To FP");
-        setAttributes(new Attribute[] {  },
-                new Object[] {  });
+		setAttributes(new Attribute[] { }, new Object[] { });
 
-        setOffsetBounds(Bounds.create(-20,-20,20,40));
+		setOffsetBounds(Bounds.create(-20, -20, 20, 40));
 
-        setPorts(new Port[] {
-        		new Port(-20,0,Port.INPUT,32), //BinNum in
-        		new Port(0,0,Port.OUTPUT,32), //FPNum out
-            });
+		setPorts(new Port[] {
+			new Port(-20, 0, Port.INPUT, 32),
+			new Port(0, 0, Port.OUTPUT, 32),
+		});
 	}
 
 	@Override
 	public void paintInstance(InstancePainter painter) {
-		// TODO Auto-generated method stub
 		painter.drawBounds();
 		painter.drawPorts();
 	}
 
 	@Override
 	public void propagate(InstanceState state) {
-		// TODO Auto-generated method stub
 		state.setPort(1, FloatHelper.valueToFloatValue(state.getPortValue(0)), 1);
 	}
 

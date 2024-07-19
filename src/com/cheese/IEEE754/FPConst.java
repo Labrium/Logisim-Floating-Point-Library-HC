@@ -36,10 +36,10 @@ public class FPConst extends InstanceFactory{
 			return Float.valueOf(value);
 		}
 	}
-	public static final Attribute<Float> ATTR_FLOAT = new FloatAttribute("attrFloatValue",new FloatGetter());
-	FPConst() {
+	public static final Attribute<Float> ATTR_FLOAT = new FloatAttribute("attrFloatValue", new FloatGetter());
+	public FPConst() {
 		super("FP Const");
-		setAttributes(new Attribute[] { ATTR_FLOAT}, new Object[] {0.0f});
+		setAttributes(new Attribute[] { ATTR_FLOAT }, new Object[] { 0.0f });
 		setOffsetBounds(Bounds.create(-70, -15, 70, 30));
 		setPorts(new Port[] {
 			new Port(0, 0, Port.OUTPUT, 32),
@@ -57,6 +57,6 @@ public class FPConst extends InstanceFactory{
 	@Override
 	public void propagate(InstanceState state) {
 		// TODO Auto-generated method stub
-		state.setPort(0,FloatHelper.floatToFloatValue(state.getAttributeValue(ATTR_FLOAT)),0);
+		state.setPort(0, FloatHelper.floatToFloatValue(state.getAttributeValue(ATTR_FLOAT)), 0);
 	}
 }

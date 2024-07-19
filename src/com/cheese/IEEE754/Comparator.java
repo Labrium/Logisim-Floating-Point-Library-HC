@@ -32,17 +32,17 @@ public class Comparator extends InstanceFactory{
 			return Float.valueOf(value);
 		}
 	}
-	public static final Attribute<Float> ATTR_LEEWAY = new FloatAttribute("attrLeewayValue",new FloatGetter());
+	public static final Attribute<Float> ATTR_LEEWAY = new FloatAttribute("attrLeewayValue", new FloatGetter());
 	public Comparator() {
 		super("Comparator");
-		setAttributes(new Attribute[] { ATTR_LEEWAY}, new Object[] {0.0f});
+		setAttributes(new Attribute[] {ATTR_LEEWAY}, new Object[] {0.0f});
 		setOffsetBounds(Bounds.create(-30, -20, 30, 40));
 		setPorts(new Port[] {
-			new Port(-30,-10,Port.INPUT,32), //A
-			new Port(-30,10,Port.INPUT,32), //B
-			new Port(0,-10,Port.OUTPUT,1), //<
-			new Port(0,0,Port.OUTPUT,1), //==
-			new Port(0,10,Port.OUTPUT,1), //>
+			new Port(-30, -10, Port.INPUT, 32), //A
+			new Port(-30, 10, Port.INPUT, 32), //B
+			new Port(0, -10, Port.OUTPUT, 1), //<
+			new Port(0, 0, Port.OUTPUT, 1), //==
+			new Port(0, 10, Port.OUTPUT, 1), //>
 		});
 	}
 
@@ -58,7 +58,7 @@ public class Comparator extends InstanceFactory{
 		// TODO Auto-generated method stub
 		float a = FloatHelper.floatValueToFloat(state.getPortValue(0));
 		float b = FloatHelper.floatValueToFloat(state.getPortValue(1));
-		float diff = Math.abs(b-a);
+		float diff = Math.abs(b - a);
 		if (diff <= state.getAttributeValue(ATTR_LEEWAY)) {
 			state.setPort(2, Value.FALSE, 1);
 			state.setPort(3, Value.TRUE, 1);
