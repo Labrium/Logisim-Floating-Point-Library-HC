@@ -21,9 +21,12 @@ public class IEEE754 extends Library {
 	 */
 	public IEEE754() {
 		tools = Arrays.asList(new AddTool[] {
-			new AddTool(new Adder()),
 			new AddTool(new BinToFP()),
 			new AddTool(new FPToBin()),
+			new AddTool(new FPProbe()),
+			new AddTool(new FPConst()),
+			new AddTool(new Comparator()),
+			new AddTool(new Adder()),
 			new AddTool(new Subtractor()),
 			new AddTool(new Multiplier()),
 			new AddTool(new Divider()),
@@ -35,9 +38,6 @@ public class IEEE754 extends Library {
 			new AddTool(new ATan()),
 			new AddTool(new Sqrt()),
 			new AddTool(new Mod()),
-			new AddTool(new FPProbe()),
-			new AddTool(new FPConst()),
-			new AddTool(new Comparator()),
 			new AddTool(new Root()),
 			new AddTool(new Log()),
 			new AddTool(new Exponentiate()),

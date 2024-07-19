@@ -10,6 +10,7 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
 
 public class Cos extends InstanceFactory {
@@ -21,8 +22,8 @@ public class Cos extends InstanceFactory {
 		setOffsetBounds(Bounds.create(-20, -20, 20, 40));
 
 		setPorts(new Port[] {
-			new Port(-20,0,Port.INPUT,32),
-			new Port(0,0,Port.OUTPUT,32),
+			new Port(-20, 0, Port.INPUT, 32),
+			new Port(0, 0, Port.OUTPUT, 32),
 		});
 	}
 
@@ -30,6 +31,8 @@ public class Cos extends InstanceFactory {
 	public void paintInstance(InstancePainter painter) {
 		painter.drawBounds();
 		painter.drawPorts();
+		Bounds bds = painter.getBounds();
+		GraphicsUtil.drawCenteredText(painter.getGraphics(), "c", bds.getX() + bds.getWidth()/2, bds.getY() + bds.getHeight()/2);
 	}
 
 	@Override

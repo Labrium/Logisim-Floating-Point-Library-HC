@@ -10,6 +10,7 @@ import com.cburch.logisim.instance.InstancePainter;
 import com.cburch.logisim.instance.InstanceState;
 import com.cburch.logisim.instance.Port;
 import com.cburch.logisim.instance.StdAttr;
+import com.cburch.logisim.util.GraphicsUtil;
 import com.cburch.logisim.util.StringGetter;
 
 public class Tan extends InstanceFactory {
@@ -30,6 +31,8 @@ public class Tan extends InstanceFactory {
 	public void paintInstance(InstancePainter painter) {
 		painter.drawBounds();
 		painter.drawPorts();
+		Bounds bds = painter.getBounds();
+		GraphicsUtil.drawCenteredText(painter.getGraphics(), "t", bds.getX() + bds.getWidth()/2, bds.getY() + bds.getHeight()/2);
 	}
 
 	@Override
